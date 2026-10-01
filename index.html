@@ -1,77 +1,175 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Makhlouf Pharmacy - Social Links</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f766e, #14b8a6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px 25px;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-    .logo {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: #0f766e;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      margin: 0 auto 15px;
-      font-weight: bold;
-    }
-    h1 { color: #0f766e; font-size: 22px; margin-bottom: 5px; }
-    p.sub { color: #666; font-size: 14px; margin-bottom: 25px; }
-    .links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      text-decoration: none;
-      background: #f0fdfa;
-      color: #0f766e;
-      padding: 14px;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      font-weight: 600;
-      transition: 0.2s;
-      border: 1px solid #ccfbf1;
-    }
-    .links a:hover { background: #0f766e; color: #fff; }
-    footer { margin-top: 20px; font-size: 12px; color: #999; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2C935C">
+  <meta name="description" content="Makhlouf Pharmacy — pharmacy, home delivery, beauty, InBody, payment and pharmacist support.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Makhlouf Pharmacy">
+  <meta property="og:description" content="Your health, beauty and pharmacy needs — all in one place.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://makhloufpharmacy.github.io/">
+  <link rel="icon" href="assets/logo/makhlouf-logo.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preload" as="image" href="assets/hero/pharmacy-exterior.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Makhlouf Pharmacy | صيدلية د. أحمد عمر مخلوف</title>
 </head>
 <body>
-  <div class="card">
-    <div class="logo">💊</div>
-    <h1>صيدلية مخلوف</h1>
-    <p class="sub">Makhlouf Pharmacy</p>
-
-    <div class="links">
-      <a href="https://wa.me/201555155173" target="_blank">📱 واتساب</a>
-      <a href="tel:+2015551555173">📞 اتصل بنا</a>
-      <a href="https://www.facebook.com/Makhloufpharmacy/  ">📘 فيسبوك</a>
-      <a href="https://instagram.com/yourpage" target="_blank">📷 إنستجرام</a>
-      <a href="https://maps.google.com/?q=yourlocation" target="_blank">📍 الموقع</a>
+  <div class="page-bg"></div>
+  <header class="topbar" id="top">
+    <a class="brand-mini" href="#top" aria-label="Makhlouf Pharmacy home">
+      <img src="assets/logo/makhlouf-logo.svg" alt="Makhlouf Pharmacy logo">
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" id="shareBtn" aria-label="Share this page" title="Share">↗</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Theme">◐</button>
     </div>
+  </header>
 
-    <footer>© 2025 Makhlouf Pharmacy</footer>
-  </div>
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/hero/pharmacy-exterior.png" alt="" onerror="this.style.display='none'">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-logo-wrap reveal">
+          <img src="assets/logo/makhlouf-logo.svg" alt="صيدلية د. أحمد عمر مخلوف">
+        </div>
+        <p class="eyebrow reveal delay-1">HEALTH • BEAUTY • CARE</p>
+        <h1 class="reveal delay-1">MAKHLOUF <span>PHARMACY</span></h1>
+        <p class="hero-ar reveal delay-2">صيدلية د. أحمد عمر مخلوف</p>
+        <p class="hero-copy reveal delay-2">Everything you need for your health, beauty and everyday care — in one place.</p>
+        <div class="hero-actions reveal delay-3">
+          <a class="btn btn-primary" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20أريد%20الاستفسار%20عن%20منتج" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+201555155173">Call Pharmacy</a>
+        </div>
+        <div class="quick-links reveal delay-3">
+          <a href="#services">Explore services <span>↓</span></a>
+          <a href="#connect">Connect with us <span>↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>Pharmacy</strong><span>Professional care</span></div>
+      <div><strong>Delivery</strong><span>At your doorstep</span></div>
+      <div><strong>Beauty</strong><span>Personal care</span></div>
+      <div><strong>Wellness</strong><span>InBody & more</span></div>
+    </section>
+
+    <section class="section-shell intro section-pad">
+      <div class="section-kicker">WELCOME TO MAKHLOUF</div>
+      <h2>A pharmacy experience<br><em>designed around you.</em></h2>
+      <p class="lead">From everyday medicines to beauty, wellness, delivery and convenient payment — discover the services available at Makhlouf Pharmacy.</p>
+    </section>
+
+    <section class="services section-shell section-pad" id="services">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">OUR SERVICES</div>
+          <h2>Everything you need.<br><em>All in one place.</em></h2>
+        </div>
+        <span class="section-count">01 — 06</span>
+      </div>
+
+      <div class="service-collage">
+        <a class="service-card card-child" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20أريد%20الاستفسار%20عن%20منتجات%20الأطفال" target="_blank" rel="noopener">
+          <div class="service-image"><img src="assets/services/child.png" alt="Children care"></div>
+          <div class="service-copy"><span>01</span><h3>Children's Care</h3><p>Products & everyday care for little ones.</p></div>
+        </a>
+
+        <a class="service-card card-delivery" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20أريد%20الاستفسار%20عن%20التوصيل%20المنزلي" target="_blank" rel="noopener">
+          <div class="service-image"><img src="assets/services/delivery.png" alt="Home delivery"></div>
+          <div class="service-copy"><span>02</span><h3>Home Delivery</h3><p>Order your pharmacy needs from home.</p></div>
+        </a>
+
+        <a class="service-card card-beauty" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20أريد%20الاستفسار%20عن%20منتجات%20العناية%20والتجميل" target="_blank" rel="noopener">
+          <div class="service-image"><img src="assets/services/beauty.png" alt="Beauty and skincare"></div>
+          <div class="service-copy"><span>03</span><h3>Beauty & Skincare</h3><p>Personal care, skincare and beauty essentials.</p></div>
+        </a>
+
+        <a class="service-card card-inbody" href="#connect">
+          <div class="service-image"><img src="assets/services/inbody.png" alt="InBody analysis"></div>
+          <div class="service-copy"><span>04</span><h3>InBody</h3><p>Body composition analysis and wellness support.</p></div>
+        </a>
+
+        <a class="service-card card-payment" href="#payment">
+          <div class="service-image"><img src="assets/services/pos.png" alt="Payment and POS"></div>
+          <div class="service-copy"><span>05</span><h3>Easy Payment</h3><p>Convenient payment options at the pharmacy.</p></div>
+        </a>
+
+        <a class="service-card card-pharmacist" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20لدي%20سؤال%20للصيدلي" target="_blank" rel="noopener">
+          <div class="service-art"><span>✦</span></div>
+          <div class="service-copy"><span>06</span><h3>Ask the Pharmacist</h3><p>Have a question? Talk to our pharmacy team.</p></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="delivery-banner section-shell">
+      <div class="delivery-copy">
+        <div class="section-kicker">AT YOUR DOOR</div>
+        <h2>Pharmacy care,<br><em>delivered.</em></h2>
+        <p>Contact us on WhatsApp and ask about our home delivery service.</p>
+        <a class="btn btn-primary" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20أريد%20طلب%20توصيل%20منزلي" target="_blank" rel="noopener">Order on WhatsApp</a>
+      </div>
+      <div class="delivery-photo"><img src="assets/services/delivery.png" alt="Makhlouf Pharmacy home delivery"></div>
+    </section>
+
+    <section class="payment section-shell section-pad" id="payment">
+      <div class="payment-panel">
+        <div>
+          <div class="section-kicker">PAY YOUR WAY</div>
+          <h2>Simple.<br><em>Convenient.</em></h2>
+          <p>Choose the payment method that suits you. Payment details can be added here when finalized.</p>
+        </div>
+        <div class="payment-options">
+          <button class="payment-option" type="button" data-copy="" data-label="InstaPay">
+            <span class="pay-icon">IP</span><span><strong>InstaPay</strong><small>Details coming soon</small></span><b>→</b>
+          </button>
+          <button class="payment-option" type="button" data-copy="" data-label="Vodafone Cash">
+            <span class="pay-icon">VC</span><span><strong>Vodafone Cash</strong><small>Details coming soon</small></span><b>→</b>
+          </button>
+          <a class="payment-option" href="tel:+201555155173"><span class="pay-icon">POS</span><span><strong>POS / Card</strong><small>Ask at the pharmacy</small></span><b>→</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="connect section-shell section-pad" id="connect">
+      <div class="section-kicker">STAY CONNECTED</div>
+      <h2>Makhlouf Pharmacy<br><em>wherever you are.</em></h2>
+      <div class="social-grid">
+        <a class="social-card facebook" href="https://www.facebook.com/Makhloufpharmacy/" target="_blank" rel="noopener"><span>f</span><div><strong>Facebook</strong><small>Follow our page</small></div><b>↗</b></a>
+        <a class="social-card instagram" href="https://www.instagram.com/makhloufpharmacy" target="_blank" rel="noopener"><span>◎</span><div><strong>Instagram</strong><small>See our latest</small></div><b>↗</b></a>
+        <a class="social-card tiktok" href="https://www.tiktok.com/@makhlofpharmacy" target="_blank" rel="noopener"><span>♪</span><div><strong>TikTok</strong><small>Watch & discover</small></div><b>↗</b></a>
+        <a class="social-card whatsapp" href="https://wa.me/201555155173" target="_blank" rel="noopener"><span>◔</span><div><strong>WhatsApp</strong><small>Chat with us</small></div><b>↗</b></a>
+      </div>
+      <div class="location-card">
+        <div><span class="location-pin">⌖</span><div><strong>Find Makhlouf Pharmacy</strong><small>Mol El Forsan — New Minya</small></div></div>
+        <a href="https://maps.app.goo.gl/ViuXpJJEjSAvq51p" target="_blank" rel="noopener">Open Maps ↗</a>
+      </div>
+      <a class="community" href="https://chat.whatsapp.com/G1oddWAzjpGKH4lfrB7msT" target="_blank" rel="noopener">
+        <span>WHATSAPP COMMUNITY</span><strong>Join our pharmacy community</strong><b>→</b>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo/makhlouf-logo.svg" alt="">
+    <div><strong>MAKHLOUF PHARMACY</strong><span>صيدلية د. أحمد عمر مخلوف</span></div>
+    <p>© <span id="year"></span> Makhlouf Pharmacy. All rights reserved.</p>
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Quick actions">
+    <a href="tel:+201555155173"><span>☎</span><small>Call</small></a>
+    <a class="bottom-main" href="https://wa.me/201555155173" target="_blank" rel="noopener"><span>◔</span><small>WhatsApp</small></a>
+    <a href="https://maps.app.goo.gl/ViuXpJJEjSAvq51p" target="_blank" rel="noopener"><span>⌖</span><small>Location</small></a>
+    <a href="#services"><span>✦</span><small>Services</small></a>
+  </nav>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
 </body>
 </html>
