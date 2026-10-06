@@ -1,13 +1,1 @@
-{
-  "name": "Makhlouf Pharmacy",
-  "short_name": "Makhlouf",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#F7FAF8",
-  "theme_color": "#2C935C",
-  "description": "Makhlouf Pharmacy — Health, Beauty & Care.",
-  "icons": [
-    {"src":"assets/logo/makhlouf-logo.png","sizes":"192x192","type":"image/png"},
-    {"src":"assets/logo/makhlouf-logo.png","sizes":"512x512","type":"image/png"}
-  ]
-}
+{"name":"Makhlouf Pharmacy","short_name":"Makhlouf","start_url":"./","display":"standalone","background_color":"#F8FBF9","theme_color":"#2C935C","description":"Makhlouf Pharmacy — صيدلية د. أحمد عمر مخلوف","icons":[{"src":"assets/logo/makhlouf-logo.png","sizes":"192x192","type":"image/png"},{"src":"assets/logo/makhlouf-logo.png","sizes":"512x512","type":"image/png"}]}
