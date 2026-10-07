@@ -6,3 +6,9 @@ function showToast(t){if(!toast)return;toast.textContent=t;toast.classList.add('
 document.getElementById('year').textContent=new Date().getFullYear();
 if('loading' in HTMLImageElement.prototype){document.querySelectorAll('img[loading="lazy"]').forEach(i=>i.loading='lazy')}
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+
+const themeBtn=document.getElementById('themeBtn');
+function setTheme(dark){document.documentElement.classList.toggle('dark',dark);if(themeBtn){themeBtn.textContent=dark?'☀':'☾';themeBtn.setAttribute('aria-label',dark?'الوضع النهاري':'الوضع الليلي')}}
+const savedTheme=localStorage.getItem('makhlouf-theme');
+setTheme(savedTheme==='dark');
+themeBtn?.addEventListener('click',()=>{const dark=!document.documentElement.classList.contains('dark');setTheme(dark);localStorage.setItem('makhlouf-theme',dark?'dark':'light')});
