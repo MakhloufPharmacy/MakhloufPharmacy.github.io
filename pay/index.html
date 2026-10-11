@@ -1,24 +1,504 @@
-<!doctype html><html lang="ar" dir="rtl"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>الدفع الإلكتروني | Makhlouf Pharmacy</title>
-<style>
-:root{--g:#2C935C;--o:#F39423;--c:#FBF8F1;--d:#184D37}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff,var(--c));font-family:Arial,Tahoma,sans-serif;color:var(--d)}
-main{max-width:520px;margin:auto;padding:24px 18px;text-align:center}
-.logo{width:105px;height:105px;object-fit:contain}.brand{font-weight:800;letter-spacing:2px;color:#D9C7A7;font-size:18px}
-.name{font-weight:800;color:var(--g);font-size:20px;margin:5px 0 20px}
-.card{background:#fff;border:1px solid #eadfce;border-radius:26px;padding:25px 18px;box-shadow:0 12px 34px #184d3718}
-h1{color:var(--g);margin:0;font-size:28px}.sub{color:#666;margin:8px 0 20px}
-a.btn{display:block;color:#fff;text-decoration:none;padding:16px;border-radius:16px;margin:12px 0;font-size:19px;font-weight:800}
-a.btn small{display:block;font-size:12px;font-weight:400;margin-top:4px}.i{background:#5A2D7E}.v{background:#E31837}
-.trust{color:var(--g);font-weight:800;margin:18px 0 8px}.wa{display:inline-block;background:var(--g);color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:700}
-footer{font-size:12px;color:#8c7d68;margin-top:24px}
-</style></head><body><main>
-<img class="logo" src="makhlouf-logo.png"><div class="brand">MAKHLOUF PHARMACY</div>
-<div class="name">صيدلية د. أحمد عمر مخلوف</div>
-<section class="card"><h1>الدفع الإلكتروني</h1><div class="sub">اختر طريقة الدفع المناسبة ليك</div>
-<a class="btn i" href="https://ipn.eg/S/ahomar.makh/instapay/5LvyJK">الدفع عبر InstaPay<small>اضغط هنا للانتقال إلى InstaPay</small></a>
-<a class="btn v" href="http://vf.eg/vfcash?id=mt&amp;qrId=yJq916">الدفع عبر Vodafone Cash<small>اضغط هنا للانتقال إلى Vodafone Cash</small></a>
-<div class="trust">سريع • آمن • موثوق</div>
-<a class="wa" href="https://wa.me/201555155173">أي استفسار؟ تواصل معنا على واتساب</a></section>
-<footer>Makhlouf Pharmacy • صحة • جمال • عناية</footer></main></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#184D37">
+  <meta name="description" content="الدفع الإلكتروني عبر InstaPay و Vodafone Cash — صيدلية د. أحمد عمر مخلوف">
+  <title>الدفع الإلكتروني | Makhlouf Pharmacy</title>
+  
+  <style>
+    @font-face {
+      font-family: 'Almarai';
+      src: url('Almarai-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --primary-green: #2C935C;
+      --deep-green: #184D37;
+      --dark-green: #0d2f1f;
+      --accent-orange: #fa8d24;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --ink: #143525;
+      --muted: #62776a;
+      --font-ar: 'Almarai', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 15%, #257d4f 0%, #174f34 45%, #0d2f1f 100%);
+      color: #ffffff;
+      font-family: var(--font-ar);
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* أضواء الخلفية الجمالية (Ambient Glows) المستوحاة من الموقع الرئيسي */
+    .ambient {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ambient-one {
+      width: 320px;
+      height: 320px;
+      background: #4ade80;
+      top: -50px;
+      right: -70px;
+    }
+    .ambient-two {
+      width: 280px;
+      height: 280px;
+      background: var(--accent-orange);
+      bottom: -60px;
+      left: -70px;
+    }
+
+    /* الحاوية الرئيسية */
+    .pay-shell {
+      width: 100%;
+      max-width: 500px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin: auto;
+    }
+
+    /* شارة حالة الصيدلية المباشرة (Live Status Badge) */
+    .pay-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(13, 47, 31, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(44, 147, 92, 0.45);
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+      letter-spacing: 0.02em;
+      font-family: var(--font-ar);
+    }
+
+    .live-pulse-dot {
+      width: 9px;
+      height: 9px;
+      background: #2ce67b;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(44, 230, 123, 0.7);
+      animation: livePulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    @keyframes livePulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(44, 230, 123, 0.8);
+        transform: scale(0.95);
+      }
+      70% {
+        box-shadow: 0 0 0 9px rgba(44, 230, 123, 0);
+        transform: scale(1.05);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(44, 230, 123, 0);
+        transform: scale(0.95);
+      }
+    }
+
+    /* رأس الصفحة: اللوجو والبراند */
+    .brand-header {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-wrap {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 0;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(255, 255, 255, 0.28);
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    .logo-wrap:hover {
+      transform: scale(1.05);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.42), 0 0 0 5px rgba(250, 141, 36, 0.35);
+    }
+
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .brand-en {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 2.8px;
+      color: #fa8d24; /* البرتقالي المميز مثل صفحة الواجهة */
+      text-transform: uppercase;
+      text-shadow: 0 2px 14px rgba(250, 141, 36, 0.45);
+      margin-bottom: 6px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .brand-ar {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+      font-family: var(--font-ar);
+    }
+
+    /* كارت الدفع الرئيسي */
+    .main-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 28px;
+      padding: 30px 22px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      text-align: center;
+      color: var(--ink);
+    }
+
+    .card-title {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--deep-green);
+      margin-bottom: 6px;
+      font-family: var(--font-ar);
+    }
+
+    .card-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-family: var(--font-ar);
+    }
+
+    /* أزرار وطرق الدفع */
+    .methods-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .pay-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #ffffff;
+      padding: 16px 18px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      font-family: var(--font-ar);
+    }
+
+    .pay-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+    }
+
+    .pay-card:active {
+      transform: translateY(-1px);
+    }
+
+    /* كارت InstaPay */
+    .pay-instapay {
+      background: linear-gradient(135deg, #4d236f 0%, #682c97 50%, #7b35b2 100%);
+    }
+    .pay-instapay:hover {
+      box-shadow: 0 14px 34px rgba(90, 45, 126, 0.45);
+    }
+
+    /* كارت Vodafone Cash */
+    .pay-vodafone {
+      background: linear-gradient(135deg, #c70d24 0%, #e31837 55%, #f22949 100%);
+    }
+    .pay-vodafone:hover {
+      box-shadow: 0 14px 34px rgba(227, 24, 55, 0.45);
+    }
+
+    .pay-card-start {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: right;
+    }
+
+    /* بادج اللوجو */
+    .pay-logo-badge {
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      padding: 3px;
+      overflow: hidden;
+      transition: transform 0.25s ease;
+    }
+    .pay-card:hover .pay-logo-badge {
+      transform: scale(1.06);
+    }
+
+    /* لوجو InstaPay */
+    .instapay-badge {
+      width: 66px;
+      height: 60px;
+      background: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+    .instapay-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* لوجو Vodafone Cash */
+    .vodafone-badge {
+      width: 72px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(8px);
+      padding: 3px;
+    }
+    .vodafone-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .pay-text {
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-ar);
+    }
+
+    .pay-text strong {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.35;
+      font-family: var(--font-ar);
+    }
+
+    .pay-text small {
+      font-size: 0.8rem;
+      opacity: 0.92;
+      margin-top: 3px;
+      font-weight: 400;
+      font-family: var(--font-ar);
+    }
+
+    .pay-arrow {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+    .pay-card:hover .pay-arrow {
+      background: #ffffff;
+      color: var(--ink);
+      transform: translate(-3px, -3px);
+    }
+
+    /* شارة الثقة والأمان */
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 22px auto 14px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(44, 147, 92, 0.08);
+      color: var(--deep-green);
+      font-size: 0.88rem;
+      font-weight: 700;
+      font-family: var(--font-ar);
+    }
+
+    /* زر الواتساب للمساعدة */
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25D366;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      width: 100%;
+      box-shadow: 0 8px 22px rgba(37, 211, 102, 0.28);
+      transition: all 0.25s ease;
+      font-family: var(--font-ar);
+    }
+    .wa-btn:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.38);
+    }
+
+    /* التذييل */
+    .pay-footer {
+      margin-top: 22px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.4px;
+      font-family: var(--font-ar);
+    }
+
+    @media (max-width: 440px) {
+      .main-card {
+        padding: 24px 16px;
+      }
+      .pay-card {
+        padding: 14px 14px;
+      }
+      .pay-text strong {
+        font-size: 1.05rem;
+      }
+      .pay-logo-badge {
+        padding: 3px;
+      }
+      .instapay-badge {
+        width: 58px;
+        height: 52px;
+      }
+      .instapay-badge img {
+        width: 100%;
+        height: 100%;
+      }
+      .vodafone-badge {
+        width: 64px;
+        height: 52px;
+      }
+      .vodafone-badge img {
+        width: 100%;
+        height: 100%;
+      }
+      .logo-wrap {
+        width: 105px;
+        height: 105px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- أضواء خلفية جمالية -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="pay-shell">
+    <!-- رأس الصفحة: شارة الحالة الحية واللوجو واسم الصيدلية -->
+    <header class="brand-header">
+      <div class="pay-live-badge">
+        <span class="live-pulse-dot"></span>
+        <span>مفتوح الآن — في خدمتكم 24 ساعة</span>
+      </div>
+      <div class="logo-wrap">
+        <img src="makhlouf-logo.webp" onerror="this.src='makhlouf-logo.png'" alt="صيدلية د. أحمد عمر مخلوف">
+      </div>
+      <div class="brand-en">MAKHLOUF PHARMACY</div>
+      <div class="brand-ar">صيدلية د. أحمد عمر مخلوف</div>
+    </header>
+
+    <!-- كارت الدفع الرئيسي -->
+    <section class="main-card">
+      <h1 class="card-title">الدفع الإلكتروني</h1>
+      <p class="card-subtitle">اختر طريقة الدفع المناسبة لك</p>
+
+      <div class="methods-list">
+        <!-- خيار InstaPay مع اللوجو الرسمي -->
+        <a class="pay-card pay-instapay" href="https://ipn.eg/S/ahomar.makh/instapay/5LvyJK" target="_blank" rel="noopener">
+          <div class="pay-card-start">
+            <div class="pay-logo-badge instapay-badge">
+              <img src="instapay.webp" onerror="this.src='instapay.png'" alt="InstaPay">
+            </div>
+            <div class="pay-text">
+              <strong>الدفع عبر InstaPay</strong>
+              <small>اضغط هنا للانتقال إلى تطبيق InstaPay</small>
+            </div>
+          </div>
+          <span class="pay-arrow">↗</span>
+        </a>
+
+        <!-- خيار Vodafone Cash مع اللوجو الرسمي -->
+        <a class="pay-card pay-vodafone" href="http://vf.eg/vfcash?id=mt&amp;qrId=yJq916" target="_blank" rel="noopener">
+          <div class="pay-card-start">
+            <div class="pay-logo-badge vodafone-badge">
+              <img src="vodafone cash.webp" onerror="this.src='vodafone cash.png'" alt="Vodafone Cash">
+            </div>
+            <div class="pay-text">
+              <strong>الدفع عبر Vodafone Cash</strong>
+              <small>اضغط هنا للانتقال إلى Vodafone Cash</small>
+            </div>
+          </div>
+          <span class="pay-arrow">↗</span>
+        </a>
+      </div>
+
+      <!-- شارة الأمان -->
+      <div class="trust-badge">
+        <span>🔒 سريع • آمن • موثوق</span>
+      </div>
+
+      <!-- دعم واتساب -->
+      <a class="wa-btn" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عندي%20استفسار%20بخصوص%20الدفع%20الإلكتروني" target="_blank" rel="noopener">
+        <span>💬 أي استفسار؟ تواصل معنا على واتساب</span>
+      </a>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="pay-footer">
+      Makhlouf Pharmacy • صحة • جمال • عناية
+    </footer>
+  </main>
+</body>
+</html>

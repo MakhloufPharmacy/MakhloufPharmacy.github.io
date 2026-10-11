@@ -1,0 +1,7 @@
+# Temporary preview images and scratch files
+*_preview.png
+full_page_preview.png
+hero_updated.png
+preview.png
+*.original
+.vscode/

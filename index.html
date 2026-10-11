@@ -1,87 +1,384 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#2C935C">
-<meta name="description" content="صيدلية د. أحمد عمر مخلوف — Makhlouf Pharmacy. كل احتياجاتك الصحية والعناية في مكان واحد.">
-<meta name="robots" content="index,follow">
-<meta property="og:title" content="Makhlouf Pharmacy | صيدلية د. أحمد عمر مخلوف">
-<meta property="og:description" content="كل احتياجاتك الصحية والعناية في مكان واحد.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://makhloufpharmacy.github.io/">
-<link rel="icon" href="assets/logo/makhlouf-logo.png">
-<link rel="manifest" href="manifest.json">
-<link rel="preload" as="image" href="assets/hero/pharmacy-exterior.webp" fetchpriority="high">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="custom-settings.css" onerror="this.remove()">
-<title>Makhlouf Pharmacy | صيدلية د. أحمد عمر مخلوف</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2C935C">
+  <meta name="description" content="صيدلية د. أحمد عمر مخلوف — Makhlouf Pharmacy. كل احتياجاتك الصحية والعناية في مكان واحد.">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:title" content="Makhlouf Pharmacy | صيدلية د. أحمد عمر مخلوف">
+  <meta property="og:description" content="كل احتياجاتك الصحية والعناية في مكان واحد.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://makhloufpharmacy.github.io/">
+  <meta property="og:image" content="assets/logo/makhlouf-logo.png">
+
+  <!-- Favicon & PWA Manifest -->
+  <link rel="icon" href="assets/logo/makhlouf-logo.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preload" as="image" href="assets/hero/pharmacy-exterior.webp" fetchpriority="high">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="custom-settings.css" onerror="this.remove()">
+
+  <title>Makhlouf Pharmacy | صيدلية د. أحمد عمر مخلوف</title>
 </head>
 <body>
-<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-<header class="topbar" id="top">
-  <a class="brand-mini" href="#top" aria-label="Makhlouf Pharmacy"><img src="assets/logo/makhlouf-logo.svg" alt="Makhlouf Pharmacy"></a>
-  <div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="الوضع الليلي">☾</button><button class="icon-btn" id="shareBtn" aria-label="مشاركة الصفحة">↗</button></div>
-</header>
-<main>
-<section class="hero" id="home">
-  <div class="hero-media"><img src="assets/hero/pharmacy-exterior.webp" alt="صيدلية مخلوف" fetchpriority="high"><div class="hero-overlay"></div><div class="hero-lines"></div></div>
-  <div class="hero-content">
-    <div class="hero-logo-wrap reveal"><img src="assets/logo/makhlouf-logo.svg" alt="صيدلية د. أحمد عمر مخلوف"></div>
-    <div class="hero-brand reveal delay-1"><strong>MAKHLOUF</strong><span>PHARMACY</span><b>صيدلية د. أحمد عمر مخلوف</b></div>
-    <div class="hero-tags reveal delay-2">صحة . جمال . عناية</div>
-    <p class="hero-copy reveal delay-2">كل ما تحتاجه لصحتك وجمالك و رعايتك اليومية ... <b>في مكان واحد</b></p>
-    <div class="hero-actions reveal delay-3">
-      <a class="btn btn-primary" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عايز%20استفسر%20عن%20منتج" target="_blank" rel="noopener">ابعتلنا على واتساب</a>
-      <a class="btn btn-glass" href="tel:+201555155173">اتصل بالصيدلية</a>
+
+  <!-- Ambient Glow Effects (خلفيات الإضاءة الجمالية) -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- Header / Topbar (شريط الترويسة العلوي) -->
+  <header class="topbar" id="top">
+    <a class="brand-mini" href="#top" aria-label="Makhlouf Pharmacy">
+      <img src="assets/logo/makhlouf-logo.webp" alt="Makhlouf Pharmacy" width="40" height="40">
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="الوضع الليلي">☾</button>
+      <button class="icon-btn" id="shareBtn" aria-label="مشاركة الصفحة">↗</button>
     </div>
-    <a class="hero-scroll reveal delay-3" href="#connect">اكتشف خدماتنا <span>↓</span></a>
-  </div>
-</section>
+  </header>
 
-<section class="quick-actions section-shell" aria-label="تواصل سريع">
-  <a class="quick-card" href="tel:+201555155173"><img src="assets/icons/call.webp" alt=""><div><small>اتصل بينا</small><strong>الصيدلية</strong></div></a>
-  <a class="quick-card accent" href="https://wa.me/201555155173" target="_blank" rel="noopener"><img src="assets/icons/whatsapp.webp" alt=""><div><small>راسلنا على</small><strong>واتساب</strong></div></a>
-</section>
+  <main>
+    <!-- ==================== 1. HERO SECTION (واجهة البداية) ==================== -->
+    <section class="hero" id="home">
+      <div class="hero-media">
+        <img src="assets/hero/pharmacy-exterior.webp" alt="صيدلية مخلوف" fetchpriority="high">
+        <div class="hero-overlay"></div>
+        <div class="hero-lines"></div>
+      </div>
+      <div class="hero-content">
+        <!-- شارة حالة الصيدلية المباشرة (Live Status Badge) -->
+        <div class="hero-live-badge reveal">
+          <span class="live-pulse-dot"></span>
+          <span>مفتوح الآن — في خدمتكم 24 ساعة</span>
+        </div>
+        <div class="hero-brand reveal">
+          <strong>MAKHLOUF</strong>
+          <span>PHARMACY</span>
+          <b>صيدلية د. أحمد عمر مخلوف</b>
+        </div>
+        <div class="hero-tags reveal delay-2">صحة . جمال . عناية</div>
+        <p class="hero-copy reveal delay-2">
+          كل ما تحتاجه لصحتك وجمالك و رعايتك اليومية ... <b>في مكان واحد</b>
+        </p>
+        <a class="hero-scroll reveal delay-3" href="#connect">
+          اكتشف خدماتنا <span>↓</span>
+        </a>
+      </div>
+    </section>
 
-<section class="section-shell connect section-pad" id="connect">
-  <div class="section-title"><span>تواصل معانا</span><h2>خليك دايمًا<br><em>على تواصل.</em></h2><p>تابعنا، اسألنا، واعرف كل جديد من Makhlouf Pharmacy.</p></div>
-  <div class="social-grid">
-    <a class="social-card" href="https://www.facebook.com/Makhloufpharmacy/" target="_blank" rel="noopener"><span class="social-icon"><img src="assets/social/facebook.webp" alt="Facebook"></span><div><strong>فيسبوك</strong><small>تابع صفحتنا</small></div><b>↗</b></a>
-    <a class="social-card" href="https://www.instagram.com/makhloufpharmacy" target="_blank" rel="noopener"><span class="social-icon"><img src="assets/social/instagram.webp" alt="Instagram"></span><div><strong>إنستجرام</strong><small>شوف آخر جديد</small></div><b>↗</b></a>
-    <a class="social-card" href="https://www.tiktok.com/@makhlofpharmacy" target="_blank" rel="noopener"><span class="social-icon"><img src="assets/social/tiktok.webp" alt="TikTok"></span><div><strong>TikTok</strong><small>شوف فيديوهاتنا</small></div><b>↗</b></a>
-    <a class="social-card" href="https://wa.me/201555155173" target="_blank" rel="noopener"><span class="social-icon"><img src="assets/social/whatsapp.webp" alt="WhatsApp"></span><div><strong>واتساب</strong><small>ابعتلنا رسالة</small></div><b>↗</b></a>
-  </div>
-</section>
+    <!-- ==================== 2. QUICK ACTIONS (أزرار الوصول السريع) ==================== -->
+    <section class="quick-actions section-shell" aria-label="تواصل سريع">
+      <a class="quick-card" data-config="phone" href="tel:+201555155173">
+        <img src="assets/icons/call.webp" alt="">
+        <div>
+          <small>اتصل بينا</small>
+          <strong>الصيدلية</strong>
+        </div>
+      </a>
+      <a class="quick-card accent" data-config-whatsapp="general" href="https://wa.me/201555155173" target="_blank" rel="noopener">
+        <img src="assets/icons/whatsapp.webp" alt="">
+        <div>
+          <small>راسلنا على</small>
+          <strong>واتساب</strong>
+        </div>
+      </a>
 
+      <!-- كارت محتاج مساعدة؟ اسأل الصيدلي (تم نقله هنا للوصول السريع الفوري) -->
+      <a class="service-card pharmacist quick-pharmacist-card" data-config-whatsapp="askPharmacist" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عندي%20سؤال%20للصيدلي" target="_blank" rel="noopener">
+        <img src="assets/services/pharmacist.webp" alt="اسأل الصيدلي" loading="lazy">
+        <div>
+          <h3>محتاج مساعدة؟</h3>
+          <small>عندك سؤال؟ اسأل الصيدلي<br>ابعت سؤالك على واتساب وإحنا هنساعدك بالمعلومة المناسبة</small>
+        </div>
+      </a>
+    </section>
 
+    <!-- ==================== 3. CONNECT & SOCIAL MEDIA (قنوات التواصل) ==================== -->
+    <section class="section-shell connect section-pad" id="connect">
+      <div class="section-title">
+        <span>تواصل معانا</span>
+        <h2>خليك دايمًا<br><em>على تواصل.</em></h2>
+        <p>تابعنا، اسألنا، واعرف كل جديد من Makhlouf Pharmacy.</p>
+      </div>
 
+      <div class="social-grid">
+        <a class="social-card" data-config-link="facebook" href="https://www.facebook.com/Makhloufpharmacy/" target="_blank" rel="noopener">
+          <span class="social-icon"><img src="assets/social/facebook.webp" alt="Facebook"></span>
+          <div>
+            <strong>فيسبوك</strong>
+            <small>تابع صفحتنا</small>
+          </div>
+          <b>↗</b>
+        </a>
 
-<section class="location section-shell section-pad" id="location">
-  <div class="section-title"><span>مستنيينك</span><h2>زورنا في<br><em>صيدلية مخلوف.</em></h2></div>
-  <div class="location-card">
-    <img src="assets/icons/location.webp" alt="">
-    <div><strong>مول الفرسان - الحي الربع - خلف العشر عماير</strong><small>المنيا الجديدة</small></div>
-    <a href="https://maps.app.goo.gl/4dxanYQV42MQB4uR9" target="_blank" rel="noopener">افتح الخريطة ↗</a>
-  </div>
-  <a class="review-card" href="https://g.page/r/CZd6vZFEy431EBE/review" target="_blank" rel="noopener"><img src="assets/social/google-reviews.webp" alt="Google Reviews"><div><strong>قيّم تجربتك معانا</strong><small>رأيك يفرق معانا على Google</small></div><b>⭐</b></a>
-  <a class="community" href="https://chat.whatsapp.com/G1oddWAzjpGKH4lfrB7msT" target="_blank" rel="noopener"><img src="assets/social/whatsapp-community.webp" alt="WhatsApp Community"><div><small>مجتمع صيدلية مخلوف</small><strong>انضم لمجتمعنا على واتساب</strong></div><b>→</b></a>
-</section>
+        <a class="social-card" data-config-link="instagram" href="https://www.instagram.com/makhloufpharmacy" target="_blank" rel="noopener">
+          <span class="social-icon"><img src="assets/social/instagram.webp" alt="Instagram"></span>
+          <div>
+            <strong>إنستجرام</strong>
+            <small>شوف آخر جديد</small>
+          </div>
+          <b>↗</b>
+        </a>
 
-<section class="section-shell services section-pad" id="services">
-  <div class="section-title"><span>خدماتنا</span><h2>احتياجاتك<br><em>في مكان واحد.</em></h2><p>اختار الخدمة اللي محتاجها وتواصل معانا بسهولة.</p></div>
-  <div class="service-grid">
-    <a class="service-card child" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عايز%20استفسر%20عن%20رعاية%20الأطفال" target="_blank" rel="noopener"><img src="assets/services/child-care.webp" alt="رعاية الأطفال" loading="lazy"><div><span>٠١</span><h3>رعاية الأطفال</h3></div></a>
-    <a class="service-card delivery" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عايز%20استفسر%20عن%20التوصيل%20المنزلي" target="_blank" rel="noopener"><img src="assets/services/delivery.webp" alt="التوصيل للمنزل" loading="lazy"><div><span>٠٢</span><h3>التوصيل للمنزل</h3></div></a>
-    <a class="service-card beauty" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عايز%20استفسر%20عن%20العناية%20بالبشرة%20والتجميل" target="_blank" rel="noopener"><img src="assets/services/beauty-care.webp" alt="العناية بالبشرة والتجميل" loading="lazy"><div><span>٠٣</span><h3>العناية بالبشرة</h3></div></a>
-    <a class="service-card inbody" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عايز%20استفسر%20عن%20InBody" target="_blank" rel="noopener"><img src="assets/services/inbody.webp" alt="InBody" loading="lazy"><div><span>٠٤</span><h3>InBody</h3></div></a>
-    <a class="service-card pharmacist" href="https://wa.me/201555155173?text=مرحباً%20صيدلية%20مخلوف،%20عندي%20سؤال%20للصيدلي" target="_blank" rel="noopener"><img src="assets/services/pharmacist.webp" alt="اسأل الصيدلي" loading="lazy"><div><span>٠٥</span><h3>محتاج مساعدة؟</h3><small>عندك سؤال؟ اسأل الصيدلي<br>ابعت سؤالك على واتساب وإحنا هنساعدك بالمعلومة المناسبة</small></div></a>
-  </div>
-</section>
-</main>
-<footer class="footer"><img src="assets/logo/makhlouf-logo.svg" alt=""><div><strong>Makhlouf Pharmacy</strong><span>صيدلية د. أحمد عمر مخلوف</span></div><small>© <span id="year"></span> Makhlouf Pharmacy</small></footer>
+        <a class="social-card" data-config-link="tiktok" href="https://www.tiktok.com/@makhlofpharmacy" target="_blank" rel="noopener">
+          <span class="social-icon"><img src="assets/social/tiktok.webp" alt="TikTok"></span>
+          <div>
+            <strong>TikTok</strong>
+            <small>شوف فيديوهاتنا</small>
+          </div>
+          <b>↗</b>
+        </a>
 
-<nav class="bottom-nav" aria-label="اختصارات"><a href="https://maps.app.goo.gl/4dxanYQV42MQB4uR9" target="_blank" rel="noopener"><img src="assets/icons/location.webp" alt="الموقع"></a><a href="tel:+201555155173"><img src="assets/icons/call.webp" alt="اتصال"></a><a class="active" href="https://wa.me/201555155173" target="_blank" rel="noopener"><img src="assets/icons/whatsapp.webp" alt="واتساب"></a></nav>
-<div class="toast" id="toast" role="status"></div>
-<script src="script.js" defer></script>
-</body></html>
+        <a class="social-card" data-config-whatsapp="general" href="https://wa.me/201555155173" target="_blank" rel="noopener">
+          <span class="social-icon"><img src="assets/social/whatsapp.webp" alt="WhatsApp"></span>
+          <div>
+            <strong>واتساب</strong>
+            <small>ابعتلنا رسالة</small>
+          </div>
+          <b>↗</b>
+        </a>
+      </div>
+
+      <a class="review-card" data-config-link="googleReview" href="https://g.page/r/CZd6vZFEy431EBE/review" target="_blank" rel="noopener">
+        <div class="review-logo-wrap">
+          <span class="gold-halo-ring"></span>
+          <img src="assets/social/google-reviews.webp" alt="Google Reviews">
+        </div>
+        <div>
+          <strong>قيّم تجربتك معانا</strong>
+          <small>رأيك يفرق معانا على Google</small>
+        </div>
+        <b>⭐</b>
+      </a>
+
+      <a class="community" data-config-link="whatsappCommunity" href="https://chat.whatsapp.com/G1oddWAzjpGKH4lfrB7msT" target="_blank" rel="noopener">
+        <img src="assets/social/whatsapp-community.webp" alt="WhatsApp Community">
+        <div>
+          <small>مجتمع صيدلية مخلوف</small>
+          <strong>انضم لمجتمعنا على واتساب</strong>
+        </div>
+        <b>→</b>
+      </a>
+    </section>
+
+    <!-- ==================== 4. LOCATION (الموقع) ==================== -->
+    <section class="location section-shell section-pad" id="location">
+      <div class="section-title">
+        <span>مستنيينك</span>
+        <h2>زورنا في<br><em>صيدلية مخلوف.</em></h2>
+      </div>
+
+      <div class="location-card">
+        <img src="assets/icons/location.webp" alt="">
+        <div>
+          <strong data-config-text="address">مول الفرسان - الحي الربع - خلف العشر عماير</strong>
+          <small data-config-text="city">المنيا الجديدة</small>
+        </div>
+        <a data-config-link="googleMaps" href="https://maps.app.goo.gl/4dxanYQV42MQB4uR9" target="_blank" rel="noopener">
+          افتح الخريطة ↗
+        </a>
+      </div>
+
+      <!-- ==================== الرسم التخطيطي لموقع الصيدلية والمعالم ==================== -->
+      <div class="schematic-card" id="schematicMap" aria-label="رسم تخطيطي لموقع الصيدلية">
+        <div class="schematic-header">
+          <div class="schematic-badge">
+            <span class="schematic-badge-dot"></span>
+            مخطط توجيهي تفاعلي
+          </div>
+          <h3>رسم تخطيطي للوصول للصيدلية</h3>
+          <p>أهم المعالم المحيطة بصيدلية مخلوف لسهولة الوصول من أي مكان في المنيا الجديدة</p>
+        </div>
+
+        <div class="schematic-canvas-wrap">
+          <svg class="schematic-svg" viewBox="0 0 760 440" preserveAspectRatio="xMidYMid meet" role="img" aria-label="خريطة تخطيطية لموقع صيدلية مخلوف والمعالم المجاورة">
+            <defs>
+              <!-- شبكة خلفية هندسية ناعمة -->
+              <pattern id="schematicGrid" width="38" height="38" patternUnits="userSpaceOnUse">
+                <path d="M 38 0 L 0 0 0 38" fill="none" stroke="currentColor" stroke-width="0.7" stroke-opacity="0.08" />
+              </pattern>
+              <!-- سهم اتجاهي -->
+              <marker id="mapArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2c935c" />
+              </marker>
+            </defs>
+
+            <!-- طبقة الشبكة الخلفية -->
+            <rect width="100%" height="100%" fill="url(#schematicGrid)" class="grid-layer" />
+
+            <!-- 1. منطقة الحي الرابع السكنية -->
+            <rect x="40" y="35" width="280" height="95" rx="16" class="map-zone zone-residence" />
+            <text x="65" y="70" class="map-zone-label">منطقة الحي الرابع</text>
+            <text x="65" y="94" class="map-zone-sub">المنيا الجديدة — منطقة سكنية</text>
+
+            <!-- 2. مجمع مول الفرسان -->
+            <g class="map-node node-clickable" data-landmark="mall" tabindex="0">
+              <rect x="370" y="35" width="350" height="235" rx="20" class="map-zone zone-mall" />
+              <text x="395" y="70" class="map-zone-label">مجمع مول الفرسان</text>
+              <text x="395" y="94" class="map-zone-sub">المجمع التجاري والخدمي الرئيسي</text>
+            </g>
+
+            <!-- 3. المحور المركزي الرئيسي (أسفل الخريطة) -->
+            <g class="map-node node-clickable" data-landmark="axis" tabindex="0">
+              <rect x="0" y="350" width="760" height="60" class="map-road main-road" />
+              <line x1="0" y1="380" x2="760" y2="380" class="road-centerline" stroke-dasharray="16 12" />
+              <text x="440" y="386" text-anchor="middle" class="road-title">المحور المركزي الرئيسي — المنيا الجديدة</text>
+            </g>
+
+            <!-- 4. طريق مدخل الحي الرابع (متفرع من المحور المركزي) -->
+            <g class="map-node node-clickable" data-landmark="entrance" tabindex="0">
+              <rect x="170" y="160" width="60" height="190" class="map-road link-road" />
+              <line x1="200" y1="160" x2="200" y2="350" class="road-centerline" stroke-dasharray="12 10" />
+              <text x="200" y="270" text-anchor="middle" transform="rotate(-90 200 270)" class="road-name">شارع مدخل الحي الرابع</text>
+            </g>
+
+            <!-- 5. شارع الـ 10 عماير المؤدي للمول -->
+            <rect x="170" y="160" width="450" height="50" class="map-road inner-road" />
+            <line x1="230" y1="185" x2="620" y2="185" class="road-centerline" stroke-dasharray="10 8" />
+            <text x="375" y="191" text-anchor="middle" class="road-name">شارع الـ 10 عماير (الممر المباشر للمول)</text>
+
+            <!-- مسار توجيهي متحرك للوصول (Animated Guide Route) -->
+            <path id="routePath" d="M 680,380 L 200,380 L 200,185 L 570,185 L 570,152" fill="none" class="route-line" />
+            <!-- مؤشر حركة متحرك يوضح اتجاه السير -->
+            <circle r="6" class="route-pulsing-dot">
+              <animateMotion dur="5.5s" repeatCount="indefinite" path="M 680,380 L 200,380 L 200,185 L 570,185 L 570,152" />
+            </circle>
+
+            <!-- معلَم: المحور المركزي (نقطة البداية) -->
+            <g class="map-node node-clickable" data-landmark="axis" tabindex="0">
+              <circle cx="680" cy="380" r="16" class="node-bg" />
+              <circle cx="680" cy="380" r="7" class="node-core" />
+              <rect x="580" y="320" width="160" height="32" rx="8" class="node-tag" />
+              <text x="660" y="341" text-anchor="middle" class="node-tag-text">🚗 المحور المركزي</text>
+            </g>
+
+            <!-- معلَم: مدخل الحي الرابع -->
+            <g class="map-node node-clickable" data-landmark="entrance" tabindex="0">
+              <circle cx="200" cy="350" r="15" class="node-bg" />
+              <circle cx="200" cy="350" r="6" class="node-core" />
+              <rect x="110" y="305" width="145" height="30" rx="8" class="node-tag" />
+              <text x="182" y="325" text-anchor="middle" class="node-tag-text">🚩 مدخل الحي الرابع</text>
+            </g>
+
+            <!-- معلَم: العشر عماير -->
+            <g class="map-node node-clickable" data-landmark="buildings" tabindex="0">
+              <rect x="50" y="152" width="112" height="64" rx="12" class="node-building-box" />
+              <text x="106" y="181" text-anchor="middle" class="node-bldg-title">🏢 الـ 10 عماير</text>
+              <text x="106" y="200" text-anchor="middle" class="node-bldg-sub">علامة واضحة ومميزة</text>
+              <line x1="162" y1="185" x2="190" y2="185" stroke="#2c935c" stroke-width="2.5" marker-end="url(#mapArrow)" />
+            </g>
+
+            <!-- معلَم: مواقف سيارات مول الفرسان -->
+            <g class="map-node node-clickable" data-landmark="mall" tabindex="0">
+              <rect x="390" y="165" width="105" height="40" rx="8" class="node-parking-box" />
+              <text x="442" y="189" text-anchor="middle" class="node-parking-text">🅿️ باركنج المول</text>
+            </g>
+
+            <!-- المعلم الرئيسي: صيدلية مخلوف داخل مول الفرسان -->
+            <g class="map-node node-clickable node-pharmacy" data-landmark="pharmacy" tabindex="0">
+              <!-- حلقات الرادار والنبض -->
+              <circle cx="570" cy="140" r="44" class="pharmacy-pulse" />
+              <circle cx="570" cy="140" r="28" class="pharmacy-pulse-inner" />
+              <circle cx="570" cy="140" r="22" class="pharmacy-pin-base" />
+              <circle cx="570" cy="140" r="15" class="pharmacy-pin-core" />
+              <!-- الصليب الطبي -->
+              <path d="M 568,133 h 4 v 4 h 4 v 4 h -4 v 4 h -4 v -4 h -4 v -4 h 4 z" fill="#ffffff" />
+
+              <!-- بطاقة عنوان الصيدلية البارزة -->
+              <g class="pharmacy-tag-group">
+                <rect x="465" y="62" width="210" height="52" rx="12" class="pharmacy-tag-box" />
+                <text x="570" y="86" text-anchor="middle" class="pharmacy-tag-name">⭐ صيدلية مخلوف</text>
+                <text x="570" y="104" text-anchor="middle" class="pharmacy-tag-desc">مول الفرسان — الدور الأرضي</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- بطاقات المعالم التفاعلية -->
+        <div class="schematic-landmarks-grid">
+          <div class="landmark-card active" data-target="pharmacy">
+            <span class="landmark-icon">📍</span>
+            <div>
+              <strong>صيدلية مخلوف (الهدف)</strong>
+              <small>داخل مول الفرسان — الدور الأرضي بواجهة مباشرة وسهلة الوصول</small>
+            </div>
+            <span class="landmark-badge target">الوجهة</span>
+          </div>
+
+          <div class="landmark-card" data-target="buildings">
+            <span class="landmark-icon">🏢</span>
+            <div>
+              <strong>خلف الـ 10 عماير</strong>
+              <small>العلامة الأشهر بالحي الرابع — أول ما توصل للعماير، المول خلفها فوراً</small>
+            </div>
+            <span class="landmark-badge">علامة بارزة</span>
+          </div>
+
+          <div class="landmark-card" data-target="mall">
+            <span class="landmark-icon">🛍️</span>
+            <div>
+              <strong>مول الفرسان</strong>
+              <small>المول التجاري والخدمي بالحي الرابع مع توفر مواقف سيارات مريحة</small>
+            </div>
+            <span class="landmark-badge">مجمع المول</span>
+          </div>
+
+          <div class="landmark-card" data-target="entrance">
+            <span class="landmark-icon">🚗</span>
+            <div>
+              <strong>المحور المركزي والمدخل</strong>
+              <small>دقيقتين فقط بالسيارة من طريق المحور الرئيسي عبر مدخل الحي الرابع</small>
+            </div>
+            <span class="landmark-badge">سهل الوصول</span>
+          </div>
+        </div>
+
+        <!-- معلومة إرشادية وتوجيه سريع -->
+        <div class="schematic-footer-tip">
+          <div class="tip-icon">💡</div>
+          <div class="tip-text">
+            <strong>معلومة إرشادية للوصول السريع:</strong>
+            <p>لو جاي من المحور المركزي، ادخل مباشرة لشارع الحي الرابع واتجه نحو الـ 10 عماير، هتلاقي مول الفرسان خلفها مباشرةً وصيدلية د. أحمد عمر مخلوف في الدور الأرضي بكل سهولة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER (التذييل) ==================== -->
+  <footer class="footer">
+    <img src="assets/logo/makhlouf-logo.webp" alt="Makhlouf Pharmacy" width="70" height="70">
+    <div>
+      <strong>Makhlouf Pharmacy</strong>
+      <span>صيدلية د. أحمد عمر مخلوف</span>
+    </div>
+    <small>© <span id="year"></span> Makhlouf Pharmacy</small>
+  </footer>
+
+  <!-- ==================== BOTTOM NAV (شريط التنقل السفلي الثابت) ==================== -->
+  <nav class="bottom-nav" aria-label="اختصارات">
+    <a data-config-link="googleMaps" href="https://maps.app.goo.gl/4dxanYQV42MQB4uR9" target="_blank" rel="noopener">
+      <img src="assets/icons/location.webp" alt="الموقع">
+    </a>
+    <a data-config="phone" href="tel:+201555155173">
+      <img src="assets/icons/call.webp" alt="اتصال">
+    </a>
+    <a class="active" data-config-whatsapp="general" href="https://wa.me/201555155173" target="_blank" rel="noopener">
+      <img src="assets/icons/whatsapp.webp" alt="واتساب">
+    </a>
+  </nav>
+
+  <!-- Toast Message Container -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- Scripts -->
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

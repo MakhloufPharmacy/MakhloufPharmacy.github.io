@@ -1,9 +1,226 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>لوحة تحكم — Makhlouf Pharmacy</title><link rel="stylesheet" href="style.css"><style>body{background:var(--bg)}</style></head><body><main class="customizer-page"><div class="customizer"><a href="index.html">← العودة للموقع</a><h1>لوحة التحكم 🎛️</h1><p class="lead">عدّل الألوان، أحجام الخطوط، اللوجو، وقالب صور الخدمات. التغييرات تظهر في المعاينة فورًا. في النهاية اضغط <b>تحميل الإعدادات</b> واستبدل ملف <code>custom-settings.css</code> داخل الموقع.</p><div class="settings-grid"><section class="setting-card"><h3>🎨 ألوان الهوية</h3><div class="setting-row"><label>الأخضر</label><input id="green" type="color" value="#2C935C"></div><div class="setting-row"><label>البرتقالي</label><input id="orange" type="color" value="#F39423"></div><div class="setting-row"><label>البيج</label><input id="cream" type="color" value="#E8D8C3"></div></section><section class="setting-card"><h3>🔠 أحجام الـ Hero</h3><div class="setting-row"><label>MAKHLOUF <span id="v1" class="setting-value"></span></label><input id="makhloufSize" type="range" min="28" max="90" value="58"></div><div class="setting-row"><label>PHARMACY <span id="v2" class="setting-value"></span></label><input id="pharmacySize" type="range" min="10" max="42" value="18"></div><div class="setting-row"><label>الاسم العربي <span id="v3" class="setting-value"></span></label><input id="arabicSize" type="range" min="20" max="60" value="34"></div><div class="setting-row"><label>الشعار <span id="v4" class="setting-value"></span></label><input id="taglineSize" type="range" min="12" max="32" value="18"></div></section><section class="setting-card"><h3>🖼️ قالب صور الخدمات</h3><div class="setting-row"><label>عرض/ارتفاع القالب <span id="v5" class="setting-value"></span></label><input id="ratio" type="range" min="1.0" max="1.8" step=".01" value="1.333"></div><div class="setting-row"><label>حواف الصور <span id="v6" class="setting-value"></span></label><input id="radius" type="range" min="8" max="40" value="24"></div><div class="setting-row"><label>المسافة بين الصور <span id="v7" class="setting-value"></span></label><input id="gap" type="range" min="6" max="24" value="14"></div></section><section class="setting-card"><h3>🎯 ضبط قص كل صورة</h3><p style="color:var(--muted);font-size:.9rem">اسحب لتغيير موضع الصورة داخل نفس القالب بدون تغيير أبعادها.</p><div class="setting-row"><label>Delivery <span id="vd" class="setting-value"></span></label><input id="delivery" type="range" min="0" max="100" value="50"></div><div class="setting-row"><label>InBody <span id="vi" class="setting-value"></span></label><input id="inbody" type="range" min="0" max="100" value="50"></div><div class="setting-row"><label>Beauty <span id="vb" class="setting-value"></span></label><input id="beauty" type="range" min="0" max="100" value="50"></div><div class="setting-row"><label>Child <span id="vc" class="setting-value"></span></label><input id="child" type="range" min="0" max="100" value="50"></div><div class="setting-row"><label>Pharmacist <span id="vp" class="setting-value"></span></label><input id="pharmacist" type="range" min="0" max="100" value="50"></div></section></div><div class="customizer-actions"><button class="customizer-btn" id="download">تحميل الإعدادات</button><button class="customizer-btn secondary" id="reset">إرجاع الإعدادات الافتراضية</button></div><div class="customizer-preview"><img class="preview-logo" src="assets/logo/makhlouf-logo.svg"><div class="preview-title" id="previewTitle">MAKHLOUF</div><div class="preview-ar" id="previewAr">صيدلية د. أحمد عمر مخلوف</div></div></div></main><script>
-const $=id=>document.getElementById(id), root=document.documentElement;
-const ids=['green','orange','cream','makhloufSize','pharmacySize','arabicSize','taglineSize','ratio','radius','gap','delivery','inbody','beauty','child','pharmacist'];
-const defaults={green:'#2C935C',orange:'#F39423',cream:'#E8D8C3',makhloufSize:58,pharmacySize:18,arabicSize:34,taglineSize:18,ratio:1.333,radius:24,gap:14,delivery:50,inbody:50,beauty:50,child:50,pharmacist:50};
-function apply(){root.style.setProperty('--green',$('green').value);root.style.setProperty('--orange',$('orange').value);root.style.setProperty('--cream',$('cream').value);root.style.setProperty('--service-image-ratio',`${$('ratio').value}/1`);root.style.setProperty('--service-radius',$('radius').value+'px');root.style.setProperty('--service-gap',$('gap').value+'px');['delivery','inbody','beauty','child','pharmacist'].forEach(x=>root.style.setProperty('--'+x+'-position',$(''+x).value+'% 50%'));$('previewTitle').style.fontSize=$('makhloufSize').value+'px';$('previewAr').style.fontSize=$('arabicSize').value+'px';[['v1','makhloufSize','px'],['v2','pharmacySize','px'],['v3','arabicSize','px'],['v4','taglineSize','px'],['v5','ratio',''],['v6','radius','px'],['v7','gap','px'],['vd','delivery','%'],['vi','inbody','%'],['vb','beauty','%'],['vc','child','%'],['vp','pharmacist','%']].forEach(([v,i,u])=>$(v).textContent=$(i).value+u)}
-ids.forEach(i=>$(i).addEventListener('input',apply));apply();
-$('reset').onclick=()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);apply()};
-$('download').onclick=()=>{const css=`/* Generated by Makhlouf Pharmacy Customizer */\n:root{--green:${$('green').value};--orange:${$('orange').value};--cream:${$('cream').value};--service-image-ratio:${$('ratio').value}/1;--service-radius:${$('radius').value}px;--service-gap:${$('gap').value}px;--delivery-position:${$('delivery').value}% 50%;--inbody-position:${$('inbody').value}% 50%;--beauty-position:${$('beauty').value}% 50%;--child-position:${$('child').value}% 50%;--pharmacist-position:${$('pharmacist').value}% 50%;}\n.hero-brand strong{font-size:${$('makhloufSize').value}px!important}.hero-brand span{font-size:${$('pharmacySize').value}px!important;color:${$('cream').value}!important}.hero-brand b{font-size:${$('arabicSize').value}px!important}.hero-tags{font-size:${$('taglineSize').value}px!important}.service-card{aspect-ratio:var(--service-image-ratio);border-radius:var(--service-radius)}.service-grid{gap:var(--service-gap)}.service-card.delivery img{object-position:var(--delivery-position)}.service-card.inbody img{object-position:var(--inbody-position)}.service-card.beauty img{object-position:var(--beauty-position)}.service-card.child img{object-position:var(--child-position)}.service-card.pharmacist img{object-position:var(--pharmacist-position)}`;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([css],{type:'text/css'}));a.download='custom-settings.css';a.click();URL.revokeObjectURL(a.href)};
-</script></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة تحكم — Makhlouf Pharmacy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: var(--bg);
+    }
+  </style>
+</head>
+<body>
+  <main class="customizer-page">
+    <div class="customizer">
+      <a href="index.html">← العودة للموقع</a>
+      <h1>لوحة التحكم 🎛️</h1>
+      <p class="lead">
+        عدّل الألوان، أحجام الخطوط، اللوجو، وقالب صور الخدمات. التغييرات تظهر في المعاينة فوراً. 
+        في النهاية اضغط <b>تحميل الإعدادات</b> واستبدل ملف <code>custom-settings.css</code> داخل الموقع.
+      </p>
+
+      <div class="settings-grid">
+        <!-- قسم الألوان -->
+        <section class="setting-card">
+          <h3>🎨 ألوان الهوية</h3>
+          <div class="setting-row">
+            <label for="green">الأخضر</label>
+            <input id="green" type="color" value="#2C935C">
+          </div>
+          <div class="setting-row">
+            <label for="orange">البرتقالي</label>
+            <input id="orange" type="color" value="#F39423">
+          </div>
+          <div class="setting-row">
+            <label for="cream">البيج</label>
+            <input id="cream" type="color" value="#E8D8C3">
+          </div>
+        </section>
+
+        <!-- قسم الخطوط للـ Hero -->
+        <section class="setting-card">
+          <h3>🔠 أحجام الـ Hero</h3>
+          <div class="setting-row">
+            <label for="makhloufSize">MAKHLOUF <span id="v1" class="setting-value"></span></label>
+            <input id="makhloufSize" type="range" min="28" max="90" value="58">
+          </div>
+          <div class="setting-row">
+            <label for="pharmacySize">PHARMACY <span id="v2" class="setting-value"></span></label>
+            <input id="pharmacySize" type="range" min="10" max="42" value="18">
+          </div>
+          <div class="setting-row">
+            <label for="arabicSize">الاسم العربي <span id="v3" class="setting-value"></span></label>
+            <input id="arabicSize" type="range" min="20" max="60" value="34">
+          </div>
+          <div class="setting-row">
+            <label for="taglineSize">الشعار <span id="v4" class="setting-value"></span></label>
+            <input id="taglineSize" type="range" min="12" max="32" value="18">
+          </div>
+        </section>
+
+        <!-- قسم قالب صور الخدمات -->
+        <section class="setting-card">
+          <h3>🖼️ قالب صور الخدمات</h3>
+          <div class="setting-row">
+            <label for="ratio">عرض/ارتفاع القالب <span id="v5" class="setting-value"></span></label>
+            <input id="ratio" type="range" min="1.0" max="1.8" step=".01" value="1.333">
+          </div>
+          <div class="setting-row">
+            <label for="radius">حواف الصور <span id="v6" class="setting-value"></span></label>
+            <input id="radius" type="range" min="8" max="40" value="24">
+          </div>
+          <div class="setting-row">
+            <label for="gap">المسافة بين الصور <span id="v7" class="setting-value"></span></label>
+            <input id="gap" type="range" min="6" max="24" value="14">
+          </div>
+        </section>
+
+        <!-- قسم ضبط تموضع الصور -->
+        <section class="setting-card">
+          <h3>🎯 ضبط قص كل صورة</h3>
+          <p style="color:var(--muted);font-size:.9rem">اسحب لتغيير موضع الصورة داخل نفس القالب بدون تغيير أبعادها.</p>
+          <div class="setting-row">
+            <label for="delivery">Delivery <span id="vd" class="setting-value"></span></label>
+            <input id="delivery" type="range" min="0" max="100" value="50">
+          </div>
+          <div class="setting-row">
+            <label for="inbody">InBody <span id="vi" class="setting-value"></span></label>
+            <input id="inbody" type="range" min="0" max="100" value="50">
+          </div>
+          <div class="setting-row">
+            <label for="beauty">Beauty <span id="vb" class="setting-value"></span></label>
+            <input id="beauty" type="range" min="0" max="100" value="50">
+          </div>
+          <div class="setting-row">
+            <label for="child">Child <span id="vc" class="setting-value"></span></label>
+            <input id="child" type="range" min="0" max="100" value="50">
+          </div>
+          <div class="setting-row">
+            <label for="pharmacist">Pharmacist <span id="vp" class="setting-value"></span></label>
+            <input id="pharmacist" type="range" min="0" max="100" value="50">
+          </div>
+        </section>
+      </div>
+
+      <div class="customizer-actions">
+        <button class="customizer-btn" id="download">تحميل الإعدادات</button>
+        <button class="customizer-btn secondary" id="reset">إرجاع الإعدادات الافتراضية</button>
+      </div>
+
+      <div class="customizer-preview">
+        <img class="preview-logo" src="assets/logo/makhlouf-logo.svg" alt="Preview Logo">
+        <div class="preview-title" id="previewTitle">MAKHLOUF</div>
+        <div class="preview-ar" id="previewAr">صيدلية د. أحمد عمر مخلوف</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const $ = id => document.getElementById(id);
+    const root = document.documentElement;
+
+    const ids = [
+      'green', 'orange', 'cream',
+      'makhloufSize', 'pharmacySize', 'arabicSize', 'taglineSize',
+      'ratio', 'radius', 'gap',
+      'delivery', 'inbody', 'beauty', 'child', 'pharmacist'
+    ];
+
+    const defaults = {
+      green: '#2C935C',
+      orange: '#F39423',
+      cream: '#E8D8C3',
+      makhloufSize: 58,
+      pharmacySize: 18,
+      arabicSize: 34,
+      taglineSize: 18,
+      ratio: 1.333,
+      radius: 24,
+      gap: 14,
+      delivery: 50,
+      inbody: 50,
+      beauty: 50,
+      child: 50,
+      pharmacist: 50
+    };
+
+    function apply() {
+      root.style.setProperty('--green', $('green').value);
+      root.style.setProperty('--orange', $('orange').value);
+      root.style.setProperty('--cream', $('cream').value);
+      root.style.setProperty('--service-image-ratio', `${$('ratio').value}/1`);
+      root.style.setProperty('--service-radius', $('radius').value + 'px');
+      root.style.setProperty('--service-gap', $('gap').value + 'px');
+
+      ['delivery', 'inbody', 'beauty', 'child', 'pharmacist'].forEach(x => {
+        root.style.setProperty('--' + x + '-position', $('' + x).value + '% 50%');
+      });
+
+      $('previewTitle').style.fontSize = $('makhloufSize').value + 'px';
+      $('previewAr').style.fontSize = $('arabicSize').value + 'px';
+
+      [
+        ['v1', 'makhloufSize', 'px'],
+        ['v2', 'pharmacySize', 'px'],
+        ['v3', 'arabicSize', 'px'],
+        ['v4', 'taglineSize', 'px'],
+        ['v5', 'ratio', ''],
+        ['v6', 'radius', 'px'],
+        ['v7', 'gap', 'px'],
+        ['vd', 'delivery', '%'],
+        ['vi', 'inbody', '%'],
+        ['vb', 'beauty', '%'],
+        ['vc', 'child', '%'],
+        ['vp', 'pharmacist', '%']
+      ].forEach(([v, i, u]) => {
+        $(v).textContent = $(i).value + u;
+      });
+    }
+
+    ids.forEach(i => $(i).addEventListener('input', apply));
+    apply();
+
+    $('reset').onclick = () => {
+      Object.entries(defaults).forEach(([k, v]) => {
+        $(k).value = v;
+      });
+      apply();
+    };
+
+    $('download').onclick = () => {
+      const css = `/* ====================================================================
+   إعدادات التخصيص المولدة عبر لوحة التحكم (customizer.html)
+   ==================================================================== */
+
+:root {
+  --green: ${$('green').value};
+  --orange: ${$('orange').value};
+  --cream: ${$('cream').value};
+  --service-image-ratio: ${$('ratio').value}/1;
+  --service-radius: ${$('radius').value}px;
+  --service-gap: ${$('gap').value}px;
+  --delivery-position: ${$('delivery').value}% 50%;
+  --inbody-position: ${$('inbody').value}% 50%;
+  --beauty-position: ${$('beauty').value}% 50%;
+  --child-position: ${$('child').value}% 50%;
+  --pharmacist-position: ${$('pharmacist').value}% 50%;
+}
+
+.hero-brand strong { font-size: ${$('makhloufSize').value}px; }
+.hero-brand span { font-size: ${$('pharmacySize').value}px; color: ${$('cream').value}; }
+.hero-brand b { font-size: ${$('arabicSize').value}px; }
+.hero-tags { font-size: ${$('taglineSize').value}px; }
+`;
+
+      const blob = new Blob([css], { type: 'text/css' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'custom-settings.css';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    };
+  </script>
+</body>
+</html>
